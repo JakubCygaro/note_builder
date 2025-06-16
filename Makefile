@@ -1,4 +1,4 @@
-targets = note.html pacan.html
+targets = example.html
 
 stylesheet = note_styles.css
 

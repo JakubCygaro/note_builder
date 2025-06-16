@@ -1,4 +1,4 @@
-targets = note.html pacan.html
+targets = example.html
 
 stylesheet = note_styles.css
 
@@ -10,4 +10,3 @@ $(targets): %.html: %.md $(stylesheet)
 
 %.md:
 	@touch $@
-

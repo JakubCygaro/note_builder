@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>example_int</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">html {margin-bottom: 3%;}.dark-theme {color: white;background-color: black;border-color: white;}.dark-theme table th {border: white;}body {width: 50%;margin-left: auto;margin-right: auto;font-size: 24px;}img {display: block;margin: auto;}table {margin: auto;border-collapse: collapse;border-style: solid;}table td,table th {border: 1px solid;padding: 15px;}nav {padding-top: 5px;}.switch {position: relative;display: inline-block;width: 60px;height: 34px;}.switch input {opacity: 0;width: 0;height: 0;}.slider {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;background-color: #ccc;-webkit-transition: .4s;transition: .4s;}.slider:before {position: absolute;content: "";height: 26px;width: 26px;left: 4px;bottom: 4px;background-color: white;-webkit-transition: .4s;transition: .4s;}input:checked+.slider {background-color: #2196F3;}input:focus+.slider {box-shadow: 0 0 1px #2196F3;}input:checked+.slider:before {-webkit-transform: translateX(26px);-ms-transform: translateX(26px);transform: translateX(26px);}.slider.round {border-radius: 34px;}.slider.round:before {border-radius: 50%;}.jump-to-top-button {display: block;margin: auto;text-align: center;}.jump-to-top-button button {top: 50%;cursor: pointer;appearance: none;background-color: transparent;border: 2px solid #1A1A1A;border-radius: 15px;box-sizing: border-box;color: #3B3B3B;cursor: pointer;display: inline-block;font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size: 16px;font-weight: 600;line-height: normal;margin: 0;min-height: 60px;min-width: 0;outline: none;padding: 16px 24px;text-align: center;text-decoration: none;transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);user-select: none;-webkit-user-select: none;touch-action: manipulation;width: 100%;will-change: transform;}.dark-theme .jump-to-top-button button {background-color: transparent;border: 2px solid #c8cacc;color: #d1d1d1;}.jump-to-top-button button:disabled {pointer-events: none;}.jump-to-top-button button:hover {color: #fff;background-color: #1A1A1A;box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;transform: translateY(-2px);}.jump-to-top-button button:active {box-shadow: none;transform: translateY(0);}</style>
+</head>
+<body>
+<script>
+var defaultDark = true;
+window.onload = (ev) => {
+    let sw = document.getElementById("theme-switch");
+    if (defaultDark){
+        sw.checked = defaultDark;
+    }
+    changeTheme(sw);
+}
+function changeTheme(themeSwitch) {
+    let mess = document.getElementById("theme-message");
+    if(themeSwitch.checked){
+        document.body.classList.add("dark-theme");
+        mess.innerText = "Change theme to light"
+    } else {
+        document.body.classList.remove("dark-theme");
+        mess.innerText = "Change theme to dark"
+    }
+}
+</script>
+<nav>
+<div>
+<p id="theme-message">
+</p>
+<label class="switch">
+<input type="checkbox" id="theme-switch" onchange="changeTheme(this)">
+<span class="slider round"></span>
+</label>
+</div>
+</nav>
+<div class="table-of-contents">
+<ul>
+<li><a href="#sample-text" id="toc-sample-text">Sample Text</a>
+<ul>
+<li><a href="#lista" id="toc-lista">Lista</a></li>
+<li><a href="#obrazek" id="toc-obrazek">Obrazek</a></li>
+<li><a href="#tex-math" id="toc-tex-math">Tex Math</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="sample-text">Sample Text</h1>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+mollit anim id est laborum.</p>
+<h2 id="lista">Lista</h2>
+<ul>
+<li>dupa</li>
+<li>dupa</li>
+<li>dupa</li>
+<li>dupa</li>
+</ul>
+<h2 id="obrazek">Obrazek</h2>
+<p><img role="img" src="topor.jpg" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Osoba</th>
+<th style="text-align: center;">Dupa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Jakub</td>
+<td style="text-align: center;">2%</td>
+</tr>
+<tr>
+<td style="text-align: center;">Bogdan</td>
+<td style="text-align: center;">100%</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#sample-text">Sample Text</a></p>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>zesraj sie</label></li>
+<li><label><input type="checkbox" checked></input>poszczaj sie</label></li>
+</ul>
+<dl>
+<dt>Term 1</dt>
+<dd>
+<p>Definition 1</p>
+</dd>
+<dt>Term 2 with <em>inline markup</em></dt>
+<dd>
+<p>Definition 2</p>
+<pre><code>{ some code, part of Definition 2 }</code></pre>
+<p>Third paragraph of definition 2.</p>
+</dd>
+</dl>
+<table style="width:89%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 13%" />
+<col style="width: 22%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Centered Header</th>
+<th style="text-align: left;">Default Aligned</th>
+<th style="text-align: right;">Right Aligned</th>
+<th style="text-align: left;">Left Aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">First</td>
+<td style="text-align: left;">row</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: left;">Example of a row that spans multiple
+lines.</td>
+</tr>
+<tr>
+<td style="text-align: center;">Second</td>
+<td style="text-align: left;">row</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">Here’s another one. Note the blank line
+between rows.</td>
+</tr>
+</tbody>
+</table>
+<table style="width:46%;">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th></th>
+<th style="text-align: left;">Earth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Temperature 1961-1990</td>
+<td>min</td>
+<td style="text-align: left;">-89.2 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td>mean</td>
+<td style="text-align: left;">14 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td>max</td>
+<td style="text-align: left;">56.7 °C</td>
+</tr>
+</tbody>
+</table>
+<p>H<sub>2</sub>0</p>
+<h2 id="tex-math">Tex Math</h2>
+<p><span class="math inline"><em>X</em><sub>(</sub><em>M</em><em>S</em><em>A</em>) = <em>r</em> * <em>p</em></span></p>
+<footer>
+<hr>
+<br>
+<div class="jump-to-top-button">
+<button type="button" onclick="window.scrollTo(0,0);">Jump to top</button>
+</div>
+<br>
+<i>
+This file has been generated with NoteBuilder,
+ <a href="https://github.com/JakubCygaro/note_builder">Github</a>
+</i>
+</footer>
+</body>
+</html>

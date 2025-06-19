@@ -23,7 +23,7 @@ TARGET_FLAGS = --from markdown+implicit_header_references+task_lists+definition_
 all: $(TARGETS)
 
 # Build the target .html file from the intermediate _int.md files
-$(TARGETS): %.html: %_int.md $(STYLESHEET) $(HEADER) $(FOOTER)
+$(TARGETS): %.html: %_int.md $(STYLESHEET) $(HEADER) $(FOOTER) $(TOC_TEMPLATE)
 	@echo "NoteBuilder: Building '$@' from '$<'"
 	@pandoc $(TARGET_FLAGS) -B $(HEADER) -A $(FOOTER) $< -s --css=$(STYLESHEET) -o $@
 

@@ -18,6 +18,7 @@ function changeTheme(themeSwitch) {
     }
 }
 </script>
+<header>
 <nav>
 <div>
 <p id="theme-message">
@@ -28,3 +29,6 @@ function changeTheme(themeSwitch) {
 </label>
 </div>
 </nav>
+<br>
+<hr>
+</header>

@@ -17,10 +17,10 @@ p {
     border: white;
 }
 
-/* .table-of-contents { */
-/**/
-/* } */
-/**/
+.table-of-contents a {
+    text-decoration: none;
+}
+
 /* .dark-theme .table-of-contents { */
 /**/
 /* } */

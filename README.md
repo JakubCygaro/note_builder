@@ -6,7 +6,9 @@ NoteBuilder is a simple utility script written as a Makefile that uses pandoc to
 
 Clone this repo and use it as a template for private notes.
 
-The Makefile contains a list of target `.html` file paths that need a coresponding `.md` file to be generated from. If no Makrdown file is found an empty one will be created.
+The Makefile contains a list of target `.html` and `.pdf` file paths that need a coresponding `.md` file to be generated from. If no Makrdown file is found an empty one will be created.
+
+The `pdf` target is not included in the `all` target, you have to explicitly order make to build it with `make pdf`.
 
 You can edit the included `internal/note_styles.css` file to change how the generated HTML looks.
 

@@ -10,7 +10,7 @@ In the grand scheme of things, *nothing* holds a place of peculiar importance. I
 
 ## Imagining Nothing
 
-![](image.jpg)
+![](example/image.jpg)
 
 The idea of nothing is difficult to visualize, which makes it a perfect candidate for an image that shows absolutely nothing — a blank canvas, a void, or maybe just a transparent PNG.
 

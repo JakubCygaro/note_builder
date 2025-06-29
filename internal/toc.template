@@ -1,24 +1,26 @@
-$if(title)$
 <header>
-$if(date)$
-<h3 class="date">$date$</h3>
+$if(title)$
+    $if(date)$
+        <h3 class="date">$date$</h3>
+    $endif$
+
+    <h1 class="title">$title$</h1>
+
+    $for(author)$
+        <h2 class="author">$author.name$</h2>
+        <p class="affilation"><em>$author.affiliation$</em></p>
+    $endfor$
+
+    $if(toc)$
+        <div class="table-of-contents">
+            <h2> Table of Contents </h2>
+            $toc$
+        </div>
+    $endif$
 $endif$
-
-<h1 class="title">$title$</h1>
-
-
-$for(author)$
-<h2 class="author">$author.name$</h2>
-<p class="affilation"><em>$author.affiliation$</em></p>
-$endfor$
 
 </header>
-$endif$
 
-$if(toc)$
-<div class="table-of-contents">
-<h2> Table of Contents </h2>
-$toc$
-</div>
-$endif$
-$body$
+<main>
+    $body$
+</main>

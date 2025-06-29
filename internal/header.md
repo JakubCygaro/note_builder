@@ -1,14 +1,26 @@
 <script>
-var defaultDark = true;
+let darkByDefault = true;
+let storage;
+let darkMode;
 window.onload = (ev) => {
     let sw = document.getElementById("theme-switch");
-    if (defaultDark){
-        sw.checked = defaultDark;
+    storage = window.localStorage;
+    let storageDarkMode = storage.getItem("darkmode");
+    if(storageDarkMode !== null){
+        storageDarkMode = storage.getItem("darkmode") === 'true' ? true : false;
     }
+    darkMode = storageDarkMode !== null ?
+            storageDarkMode :
+            darkByDefault ?
+                true :
+                false;
+
+    sw.checked = darkMode;
     changeTheme(sw);
-}
+};
 function changeTheme(themeSwitch) {
     let mess = document.getElementById("theme-message");
+    storage.setItem("darkmode", themeSwitch.checked);
     if(themeSwitch.checked){
         document.body.classList.add("dark-theme");
         mess.innerText = "Change theme to light"
@@ -19,8 +31,7 @@ function changeTheme(themeSwitch) {
 }
 </script>
 <header>
-<nav>
-<div>
+<div class="theme-switch-div">
 <p id="theme-message">
 </p>
 <label class="switch">
@@ -28,7 +39,6 @@ function changeTheme(themeSwitch) {
 <span class="slider round"></span>
 </label>
 </div>
-</nav>
 <br>
 <hr>
 </header>

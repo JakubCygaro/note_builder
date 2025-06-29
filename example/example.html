@@ -21,20 +21,32 @@ vertical-align: middle;
 }
 .display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style type="text/css">html {margin-bottom: 3%;}p {text-align: justify;text-justify: inter-word;}.dark-theme {color: white;background-color: #1f1f1f;border-color: white;}.dark-theme table th {border: white;}.table-of-contents a {text-decoration: none;}body {width: 50%;margin-left: auto;margin-right: auto;font-size: 24px;}a {color: black;font-style: italic;}.dark-theme a {color: white;}a:hover {color: gray;}.dark-theme a:hover {color: gray;}img {display: block;margin: auto;}table {margin: auto;border-collapse: collapse;border-style: solid;}table td,table th {border: 1px solid;padding: 15px;}nav {padding-top: 5px;}.switch {position: relative;display: inline-block;width: 60px;height: 34px;}.switch input {opacity: 0;width: 0;height: 0;}.slider {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;background-color: #ccc;-webkit-transition: .4s;transition: .4s;}.slider:before {position: absolute;content: "";height: 26px;width: 26px;left: 4px;bottom: 4px;background-color: white;-webkit-transition: .4s;transition: .4s;}input:checked+.slider {background-color: #2196F3;}input:focus+.slider {box-shadow: 0 0 1px #2196F3;}input:checked+.slider:before {-webkit-transform: translateX(26px);-ms-transform: translateX(26px);transform: translateX(26px);}.slider.round {border-radius: 34px;}.slider.round:before {border-radius: 50%;}.jump-to-top-button {display: block;margin: auto;text-align: center;}.jump-to-top-button button {top: 50%;cursor: pointer;appearance: none;background-color: transparent;border: 2px solid #1A1A1A;border-radius: 15px;box-sizing: border-box;color: #3B3B3B;cursor: pointer;display: inline-block;font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size: 16px;font-weight: 600;line-height: normal;margin: 0;min-height: 60px;min-width: 0;outline: none;padding: 16px 24px;text-align: center;text-decoration: none;transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);user-select: none;-webkit-user-select: none;touch-action: manipulation;width: 100%;will-change: transform;}.dark-theme .jump-to-top-button button {background-color: transparent;border: 2px solid #c8cacc;color: #d1d1d1;}.jump-to-top-button button:disabled {pointer-events: none;}.jump-to-top-button button:hover {color: #fff;background-color: #1A1A1A;box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;transform: translateY(-2px);}.jump-to-top-button button:active {box-shadow: none;transform: translateY(0);}</style>
+  <style type="text/css">html {margin-bottom: 3%;}p {text-align: justify;text-justify: inter-word;}.dark-theme {color: white;background-color: #1f1f1f;border-color: white;}.dark-theme table th {border: white;}.table-of-contents a {text-decoration: none;}body {width: 50%;margin-left: auto;margin-right: auto;font-size: 24px;}a {color: black;font-style: italic;}.dark-theme a {color: white;}a:hover {color: gray;}.dark-theme a:hover {color: gray;}img {display: block;margin: auto;}table {margin: auto;border-collapse: collapse;border-style: solid;}table td,table th {border: 1px solid;padding: 15px;}.theme-switch-div {padding-top: 5px;}.switch {position: relative;display: inline-block;width: 60px;height: 34px;}.switch input {opacity: 0;width: 0;height: 0;}.slider {position: absolute;cursor: pointer;top: 0;left: 0;right: 0;bottom: 0;background-color: #ccc;-webkit-transition: .4s;transition: .4s;}.slider:before {position: absolute;content: "";height: 26px;width: 26px;left: 4px;bottom: 4px;background-color: white;-webkit-transition: .4s;transition: .4s;}input:checked+.slider {background-color: #2196F3;}input:focus+.slider {box-shadow: 0 0 1px #2196F3;}input:checked+.slider:before {-webkit-transform: translateX(26px);-ms-transform: translateX(26px);transform: translateX(26px);}.slider.round {border-radius: 34px;}.slider.round:before {border-radius: 50%;}.jump-to-top-button {display: block;margin: auto;text-align: center;}.jump-to-top-button button {top: 50%;cursor: pointer;appearance: none;background-color: transparent;border: 2px solid #1A1A1A;border-radius: 15px;box-sizing: border-box;color: #3B3B3B;cursor: pointer;display: inline-block;font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size: 16px;font-weight: 600;line-height: normal;margin: 0;min-height: 60px;min-width: 0;outline: none;padding: 16px 24px;text-align: center;text-decoration: none;transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);user-select: none;-webkit-user-select: none;touch-action: manipulation;width: 100%;will-change: transform;}.dark-theme .jump-to-top-button button {background-color: transparent;border: 2px solid #c8cacc;color: #d1d1d1;}.jump-to-top-button button:disabled {pointer-events: none;}.jump-to-top-button button:hover {color: #fff;background-color: #1A1A1A;box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;transform: translateY(-2px);}.jump-to-top-button button:active {box-shadow: none;transform: translateY(0);}</style>
 </head>
 <body>
 <script>
-var defaultDark = true;
+let darkByDefault = true;
+let storage;
+let darkMode;
 window.onload = (ev) => {
     let sw = document.getElementById("theme-switch");
-    if (defaultDark){
-        sw.checked = defaultDark;
+    storage = window.localStorage;
+    let storageDarkMode = storage.getItem("darkmode");
+    if(storageDarkMode !== null){
+        storageDarkMode = storage.getItem("darkmode") === 'true' ? true : false;
     }
+    darkMode = storageDarkMode !== null ?
+            storageDarkMode :
+            darkByDefault ?
+                true :
+                false;
+
+    sw.checked = darkMode;
     changeTheme(sw);
-}
+};
 function changeTheme(themeSwitch) {
     let mess = document.getElementById("theme-message");
+    storage.setItem("darkmode", themeSwitch.checked);
     if(themeSwitch.checked){
         document.body.classList.add("dark-theme");
         mess.innerText = "Change theme to light"
@@ -45,8 +57,7 @@ function changeTheme(themeSwitch) {
 }
 </script>
 <header>
-<nav>
-<div>
+<div class="theme-switch-div">
 <p id="theme-message">
 </p>
 <label class="switch">
@@ -54,28 +65,12 @@ function changeTheme(themeSwitch) {
 <span class="slider round"></span>
 </label>
 </div>
-</nav>
 <br>
 <hr>
 </header>
-<div class="table-of-contents">
-<h2>
-Table of Contents
-</h2>
-<ul>
-<li><a href="#the-essence-of-nothing-a-thoughtless-exploration" id="toc-the-essence-of-nothing-a-thoughtless-exploration"><strong>The
-Essence of Nothing: A Thoughtless Exploration</strong></a>
-<ul>
-<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
-<li><a href="#imagining-nothing" id="toc-imagining-nothing">Imagining
-Nothing</a></li>
-<li><a href="#common-contexts-of-nothing" id="toc-common-contexts-of-nothing">Common Contexts of Nothing</a></li>
-<li><a href="#why-nothing-matters" id="toc-why-nothing-matters">Why
-Nothing Matters</a></li>
-<li><a href="#conclusion" id="toc-conclusion">Conclusion</a></li>
-</ul></li>
-</ul>
-</div>
+<header>
+</header>
+<main>
 <p><strong><em>EXAMPLE FILLER TEXT GENERATED BY
 CHATGPT</em></strong></p>
 <h1 id="the-essence-of-nothing-a-thoughtless-exploration"><strong>The
@@ -93,46 +88,28 @@ perfect candidate for an image that shows absolutely nothing — a blank
 canvas, a void, or maybe just a transparent PNG.</p>
 <hr />
 <h2 id="common-contexts-of-nothing">Common Contexts of Nothing</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Context</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Conversations</td>
-<td style="text-align: left;">Saying “nothing” often implies
-something.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Productivity</td>
-<td style="text-align: left;">Taking a break is sometimes labeled as
-nothing.</td>
-</tr>
-<tr>
-<td style="text-align: left;">Philosophy</td>
-<td style="text-align: left;">Nothing is a serious topic of
-non-discussion.</td>
-</tr>
-</tbody>
-</table>
+<p>Context Description ————— ————————————————- Conversations Saying
+“nothing” often implies something. Productivity Taking a break is
+sometimes labeled as nothing. Philosophy Nothing is a serious topic of
+non-discussion.</p>
 <hr />
 <h2 id="why-nothing-matters">Why Nothing Matters</h2>
 <p>Even though it’s often overlooked, nothing can be surprisingly
 impactful in day-to-day life. Consider the following:</p>
 <ul>
-<li>It provides space for rest and reflection.</li>
+<li><p>It provides space for rest and reflection.</p>
+<ul>
 <li>It serves as a contrast to something.</li>
 <li>It has inspired entire genres of thought and art.</li>
 <li>It’s universally accessible and infinitely scalable.</li>
 </ul>
 <hr />
-<h2 id="conclusion">Conclusion</h2>
+<p>## Conclusion</p>
 <p>In the end, this article has successfully explained very little. But
 in doing so, it may have demonstrated the value of nothing — a concept
-that is everywhere and nowhere, all at once.</p>
+that is everywhere and nowhere, all at once.</p></li>
+</ul>
+</main>
 <footer>
 <hr>
 <br>
